@@ -1,6 +1,11 @@
 {
     "name": "web-auto-testing",
     "author": "yanxianliang",
+    "description": "web auto test cli",
+    "license": "MIT",
+    "engines": {
+        "node": ">=6"
+    },
     "repository": {
         "type": "git",
         "url": "git@github.com:yanxlg/web-auto-testing.git"
@@ -17,6 +22,11 @@
         "@types/selenium-webdriver": "^3.0.9",
         "rc-tools":"^8.0.1"
     },
+    "files": [
+        "lib",
+        "es",
+        "dist"
+    ],
     "scripts": {
         "watch-tsc": "rc-tools run watch-tsc",
         "build": "rc-tools run build",
