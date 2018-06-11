@@ -10,7 +10,7 @@
         "type": "git",
         "url": "git@github.com:yanxlg/web-auto-testing.git"
     },
-    "version": "0.0.3",
+    "version": "0.0.4",
     "dependencies": {
         "selenium-webdriver":"^4.0.0-alpha.1",
         "geckodriver":"^1.11.0"

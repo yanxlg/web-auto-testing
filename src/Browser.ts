@@ -1,5 +1,6 @@
 /**
  * @disc:浏览器实例
+ * headless 模式浏览
  * @author:yanxinaliang
  * @time：2018/6/10 15:12
  */
@@ -7,6 +8,7 @@ import {
     Builder, By, ThenableWebDriver,
     WebElement
 } from 'selenium-webdriver';
+import {Options} from 'selenium-webdriver/firefox';
 
 export enum BrowserType{
     CHROME='chrome',
@@ -21,7 +23,9 @@ export enum BrowserType{
 class Browser{
     private browser:ThenableWebDriver;
     constructor(browserType:BrowserType){
-        this.browser = new Builder().forBrowser(browserType).build();
+        const option:Options=new Options();
+        option.headless();
+        this.browser = new Builder().forBrowser(browserType).setFirefoxOptions(option).build();
     }
     public async open(url:string){
         // await this.browser.actions().keyDown(Key.CONTROL).sendKeys("t").keyUp(Key.CONTROL).perform();// 创建一个新标签页
