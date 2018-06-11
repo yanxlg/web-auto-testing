@@ -40,7 +40,10 @@ class Browser{
         return this.browser.findElements(By.className(className));
     }
     public async elementShot(element:WebElement,scroll?:boolean){
-        return await element.takeScreenshot(scroll);
+        return element.takeScreenshot(scroll);
+    }
+    public async executeScript(script:string){
+        return this.browser.executeScript(script);
     }
     public async quit(){
         return await this.browser.quit();
