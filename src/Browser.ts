@@ -27,6 +27,9 @@ class Browser{
         option.headless();
         this.browser = new Builder().forBrowser(browserType).setFirefoxOptions(option).build();
     }
+    public async setWindowSize(width:number,height:number){
+        return this.browser.manage().window().setSize(width,height);
+    }
     public async open(url:string){
         // await this.browser.actions().keyDown(Key.CONTROL).sendKeys("t").keyUp(Key.CONTROL).perform();// 创建一个新标签页
         return await this.browser.get(url);
